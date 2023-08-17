@@ -1,9 +1,12 @@
+"use client"
 import "../style/globals.css";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TopLoader } from "@/components/top-loader";
+import { Toaster } from "@/components/ui/toaster";
+import { SessionProvider } from "next-auth/react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -34,16 +37,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/todo key-icon.png" sizes="any" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans",
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TopLoader />
-          {children}
-        </ThemeProvider>
+        <SessionProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <TopLoader />
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --navbar-background: 0 0% 95%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
@@ -29,6 +30,7 @@
  
   .dark {
     --background: 224 71.4% 4.1%;
+    --navbar-background: 224 71.4% 7.5%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
