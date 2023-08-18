@@ -136,25 +136,30 @@ export function UserNotifications() {
   );
 }
 
-//TODO - Typeguard for upload type
 //TODO - File icons for upload type
-interface NotificationMessageeProps {
+//TODO - Finish NotificationMessagee component and typeguard for upload type
+
+interface NotificationMessageProps {
   title: string;
   username: string;
   time: string;
   project: string;
   type: "mention" | "joined" | "request" | "upload";
-  filename?: string;
-  filesize?: string;
 }
 
-const NotificationMessagee = (props: ReadonlyProps<NotificationMessageeProps>) => {
+interface NotificationUploadProps extends NotificationMessageProps {
+  type: "upload";
+  filename: string;
+  filesize: string;
+}
+
+const NotificationMessagee = (props: ReadonlyProps<NotificationMessageProps | NotificationUploadProps>) => {
   const [firstName, lastName] = props.username.split(" ");
   const initials = (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
 
-  // const isUploadType = (type: NotificationMessageeProps["type"]): type is "upload" => {
-  //   return type === "upload";
-  // };
+  function isUploadType(props: ReadonlyProps<NotificationMessageProps | NotificationUploadProps>): props is NotificationUploadProps {
+    return props.type === "upload";
+  }
 
   return (
     <div className="mt-4 flex items-start space-x-4">
@@ -180,12 +185,19 @@ const NotificationMessagee = (props: ReadonlyProps<NotificationMessageeProps>) =
             </Button>
           </div>
         )}
-        {props.type === "upload" && (
+        {isUploadType(props) && (
           <p className="mt-2 text-sm flex gap-2 items-center">
             <span
-              className={"rounded-[4px] w-5 h-5 px-1 py-0.5 dark:bg-white bg-black"}
+              className={
+                "rounded-[4px] w-5 h-5 px-1 py-0.5 dark:bg-white bg-black"
+              }
             >
-              <Image src="/icons/figma.png" alt="file icon" width={10} height={10} />
+              <Image
+                src="/icons/figma.png"
+                alt="file icon"
+                width={10}
+                height={10}
+              />
             </span>{" "}
             {props.filename}{" "}
             <span className="text-muted-foreground">{props.filesize}</span>
