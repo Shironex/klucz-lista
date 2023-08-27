@@ -134,7 +134,7 @@ export function UserAuthForm() {
         onClick={() => {
           setIsGitHubLoading(true);
           signIn("github", {
-            callbackUrl: searchParams?.get("from") || "/dashboard",
+            callbackUrl: searchParams?.get("from") || "/projects",
           });
         }}
       >

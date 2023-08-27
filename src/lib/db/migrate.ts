@@ -19,8 +19,6 @@ const runMigrate = async () => {
     database: url.pathname.substr(1),
   });
 
-  console.log(connection)
-
   const db = drizzle(connection)
 
   console.log('⏳ Running migrations...')

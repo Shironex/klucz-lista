@@ -15,6 +15,7 @@ import {
   LucideProps,
   Moon,
   MoreVertical,
+  MoreHorizontal,
   Pizza,
   Plus,
   Settings,
@@ -23,7 +24,16 @@ import {
   Twitter,
   User,
   X,
-  Bell
+  Bell,
+  LayoutDashboard,
+  AlignLeft,
+  GripVertical,
+  ArrowDownUp,
+  Star,
+  Package2,
+  Info,
+  Share,
+  Search,
 } from "lucide-react";
 
 
@@ -49,7 +59,19 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  dashboard: LayoutDashboard,
+  options: MoreHorizontal,
+  sort: ArrowDownUp,
+  leftList: AlignLeft,
   notifications: Bell,
+  dotsList: GripVertical,
+  favorite: Star,
+  archive: Package2,
+  Info: Info,
+  share: Share,
+  search: Search,
+  // sortAZ: ArrowDownAZIcon,
+  // sortZA: ArrowDownZA,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

@@ -3,7 +3,6 @@ import GitHubProvider from "next-auth/providers/github"
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import db from "./db/db";
 import { env } from "@/env.mjs";
-import { GetServerSidePropsContext } from "next";
 
 
 export const authOptions: NextAuthOptions = {
@@ -11,7 +10,15 @@ export const authOptions: NextAuthOptions = {
   // This is a temporary fix for prisma client.
   // @see https://github.com/prisma/prisma/issues/16117
   adapter: DrizzleAdapter(db),
-
+  callbacks: {
+    session: ({ session, user }) => ({
+      ...session,
+      user: {
+        ...session.user,
+        id: user.id,
+      },
+    }),
+  },
   pages: {
     signIn: "/login",
   },
@@ -24,6 +31,6 @@ export const authOptions: NextAuthOptions = {
   ],
 }
 
-export const getServerAuthSession = (ctx: { req: GetServerSidePropsContext['req']; res: GetServerSidePropsContext['res'] }) => {
-  return getServerSession(ctx.req, ctx.res, authOptions)
+export const getUserSession = () => {
+  return getServerSession(authOptions)
 }

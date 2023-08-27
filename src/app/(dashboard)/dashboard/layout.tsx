@@ -1,4 +1,5 @@
 import DashboardNavBar from "@/components/layout/dashboard-nav-bar";
+import SideBar from "@/components/layout/side-bar";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -6,9 +7,12 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <div className="min-h-screen">
-      <DashboardNavBar />
-      {children}
-    </div>
+    <main className="min-h-screen flex">
+      <SideBar />
+      <div className="flex flex-col flex-1">
+        <DashboardNavBar />
+        {children}
+      </div>
+    </main>
   );
 }

@@ -3,6 +3,8 @@ import { Logger } from "drizzle-orm";
 import chalk from "chalk";
 import { env } from "@/env.mjs";
 import { createConnection } from "mysql2";
+import * as projectSchema from "@/lib/db/schema/project-schema";
+import * as userSchema from "@/lib/db/schema/user-schema";
 
 class MyLogger implements Logger {
   logQuery(query: string, params: unknown[]): void {
@@ -25,6 +27,11 @@ const connection = createConnection({
 
 const db = drizzle(connection, {
   logger: new MyLogger(),
+  schema: {
+    ...projectSchema,
+    ...userSchema,
+  },
+  mode: "default"
 });
 
 export default db;
