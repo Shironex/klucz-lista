@@ -49,7 +49,7 @@ dependencies:
     version: 1.1.4(@types/react-dom@18.2.7)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
   '@t3-oss/env-nextjs':
     specifier: ^0.6.0
-    version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
+    version: 0.6.0(typescript@5.1.6)(zod@3.22.3)
   '@types/node':
     specifier: 20.5.0
     version: 20.5.0
@@ -82,7 +82,7 @@ dependencies:
     version: 0.28.2(mysql2@3.6.0)(postgres@3.3.5)
   drizzle-zod:
     specifier: ^0.5.0
-    version: 0.5.0(drizzle-orm@0.28.2)(zod@3.21.4)
+    version: 0.5.0(drizzle-orm@0.28.2)(zod@3.22.3)
   eslint:
     specifier: 8.47.0
     version: 8.47.0
@@ -141,8 +141,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   zod:
-    specifier: ^3.21.4
-    version: 3.21.4
+    specifier: ^3.22.3
+    version: 3.22.3
   zustand:
     specifier: ^4.4.1
     version: 4.4.1(@types/react@18.2.20)(react@18.2.0)
@@ -1667,25 +1667,25 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@t3-oss/env-core@0.6.0(typescript@5.1.6)(zod@3.21.4):
+  /@t3-oss/env-core@0.6.0(typescript@5.1.6)(zod@3.22.3):
     resolution: {integrity: sha512-3FkPAba069WRZVVab/sB1m3eSGn/rZeypx5k+sWEu1d+k0OQdRDnvFS+7MtxYgqVrwaRk3b7yVnX2dgSPVmWPQ==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
       typescript: 5.1.6
-      zod: 3.21.4
+      zod: 3.22.3
     dev: false
 
-  /@t3-oss/env-nextjs@0.6.0(typescript@5.1.6)(zod@3.21.4):
+  /@t3-oss/env-nextjs@0.6.0(typescript@5.1.6)(zod@3.22.3):
     resolution: {integrity: sha512-SpzcGNIbUYcQw4zPPFeRJqCC1560zL7QmB0puIqOnuCsmykPkqHPX+n9CNZLXVQerboHzfvb7Kd+jAdouk72Vw==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
-      '@t3-oss/env-core': 0.6.0(typescript@5.1.6)(zod@3.21.4)
+      '@t3-oss/env-core': 0.6.0(typescript@5.1.6)(zod@3.22.3)
       typescript: 5.1.6
-      zod: 3.21.4
+      zod: 3.22.3
     dev: false
 
   /@types/hoist-non-react-statics@3.3.1:
@@ -2317,7 +2317,7 @@ packages:
       hanji: 0.0.5
       json-diff: 0.9.0
       minimatch: 7.4.6
-      zod: 3.21.4
+      zod: 3.22.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2388,14 +2388,14 @@ packages:
       postgres: 3.3.5
     dev: false
 
-  /drizzle-zod@0.5.0(drizzle-orm@0.28.2)(zod@3.21.4):
+  /drizzle-zod@0.5.0(drizzle-orm@0.28.2)(zod@3.22.3):
     resolution: {integrity: sha512-gIOXclphhaleYFEGZFxSyJBoiPRyksGyIPgmgWz6a+j5JeaOrOf1QOPjf1p5AHYA+1O3Q01ondGOZfgObxBTsg==}
     peerDependencies:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
       drizzle-orm: 0.28.2(mysql2@3.6.0)(postgres@3.3.5)
-      zod: 3.21.4
+      zod: 3.22.3
     dev: false
 
   /electron-to-chromium@1.4.492:
@@ -4916,6 +4916,10 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
+
+  /zod@3.22.3:
+    resolution: {integrity: sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==}
 
   /zustand@4.4.1(@types/react@18.2.20)(react@18.2.0):
     resolution: {integrity: sha512-QCPfstAS4EBiTQzlaGP1gmorkh/UL1Leaj2tdj+zZCZ/9bm0WS7sI2wnfD5lpOszFqWJ1DcPnGoY8RDL61uokw==}
